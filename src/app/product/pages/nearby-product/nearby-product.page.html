@@ -1,9 +1,93 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>nearby-product</ion-title>
+  <ion-toolbar> 
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Puntos más Cercanos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  
+ <!--<ion-virtual-scroll [items]="items" approxItemHeight="320px">--> 
+    <ion-card>
+      <img src="https://picsum.photos/id/1065/400" />
+      <ion-card-header>
+        <ion-card-subtitle> <b>Davant edifici Perú, s/n, 43007 Tarragona, España</b>  (11 km - 25 min)  </ion-card-subtitle>
+        <ion-card-title>Poliesportiu de Sant Pere i Sant Pau</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+  
+        <ion-chip outline color="primary">
+          <ion-icon name="battery-charging-outline"></ion-icon>
+          <ion-label>Eléctricas <b>(2)</b></ion-label>
+        </ion-chip>
+        <ion-chip outline color="primary">
+          <ion-icon name="bicycle-outline"></ion-icon>
+          <ion-label>Normales <b>(6)</b></ion-label>
+        </ion-chip>
+        <ion-chip outline color="primary">
+          <ion-icon name="sad-outline"></ion-icon>
+          <ion-label>Antiguas <b>(12)</b></ion-label>
+        </ion-chip>
+  
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <img src="https://picsum.photos/id/146/400" />
+      <ion-card-header>
+        <ion-card-subtitle> <b>C/ Duquesa Villahermosa, 5001, 50007 Zaragoza, España</b>  (101 km - 2 horas)  </ion-card-subtitle>
+        <ion-card-title>Parque de las Delicias</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+  
+        <ion-chip outline color="primary">
+          <ion-icon name="battery-charging-outline"></ion-icon>
+          <ion-label>Eléctricas <b>(2)</b></ion-label>
+        </ion-chip>
+        <ion-chip outline color="primary">
+          <ion-icon name="bicycle-outline"></ion-icon>
+          <ion-label>Normales <b>(6)</b></ion-label>
+        </ion-chip>
+        <ion-chip outline color="primary">
+          <ion-icon name="sad-outline"></ion-icon>
+          <ion-label>Antiguas <b>(12)</b></ion-label>
+        </ion-chip>
+  
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <img src="https://picsum.photos/id/163/400" />
+      <ion-card-header>
+        <ion-card-subtitle> <b>Av. San Jorge, 74-76, 44500 Andorra, Teruel, España</b>  (110 km - 4 horas)  </ion-card-subtitle>
+        <ion-card-title>CaixaBank</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+  
+        <ion-chip outline color="primary">
+          <ion-icon name="battery-charging-outline"></ion-icon>
+          <ion-label>Eléctricas <b>(2)</b></ion-label>
+        </ion-chip>
+        <ion-chip outline color="primary">
+          <ion-icon name="bicycle-outline"></ion-icon>
+          <ion-label>Normales <b>(6)</b></ion-label>
+        </ion-chip>
+        <ion-chip outline color="primary">
+          <ion-icon name="sad-outline"></ion-icon>
+          <ion-label>Antiguas <b>(12)</b></ion-label>
+        </ion-chip>
+  
+      </ion-card-content>
+    </ion-card>
+
+  <!--</ion-virtual-scroll>-->
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 </ion-content>
