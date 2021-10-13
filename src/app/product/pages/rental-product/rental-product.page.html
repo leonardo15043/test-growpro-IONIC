@@ -1,9 +1,75 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>rental-product</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Mis alquileres</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <ion-list>
+    <ion-item>
+      <ion-avatar slot="start">
+        <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgXXKXCGp1SkfDJJZe9OAzuv5zX5XupEhOzg&usqp=CAU"></ion-img>
+      </ion-avatar>
+      <ion-label>
+        <h2>Bicicleta Todoterreno Bicicleta Mtb</h2>
+        <ion-chip outline color="primary">
+          <ion-icon name="bicycle-outline"></ion-icon>
+          <ion-label><b>€</b> 10 </ion-label>
+        </ion-chip>
+        <ion-chip color="success">
+          <ion-label>Premium</ion-label>
+        </ion-chip>
+        <ion-chip outline color="danger">
+          <ion-label>07/03/2021</ion-label>
+        </ion-chip>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-avatar slot="start">
+        <ion-img src="https://http2.mlstatic.com/D_NQ_NP_719813-MCO45155513790_032021-O.webp"></ion-img>
+      </ion-avatar>
+      <ion-label>
+        <h2>Bicicleta Playera Urbana</h2>
+        <ion-chip outline color="primary">
+          <ion-icon name="sad-outline"></ion-icon>
+          <ion-label><b>€</b> 10 </ion-label>
+        </ion-chip>
+        <ion-chip>
+          <ion-label>Basic</ion-label>
+        </ion-chip>
+        <ion-chip outline color="danger">
+          <ion-label>07/03/2021</ion-label>
+        </ion-chip>
+      </ion-label>
+    </ion-item>  
+    <ion-item>
+      <ion-avatar slot="start">
+        <ion-img src="https://auteco.vteximg.com.br/arquivos/ids/192511-599-599/BicicletaElectrica_Starker_Tflex_negroAzul_2020_foto--4-.jpg?v=637279074316930000"></ion-img>
+      </ion-avatar>
+      <ion-label>
+        <h2> Bicicleta eléctrica tipo plegable</h2>
+        <ion-chip outline color="primary">
+          <ion-icon name="battery-charging-outline"></ion-icon>
+          <ion-label><b>€</b> 10 </ion-label>
+        </ion-chip>
+        <ion-chip>
+          <ion-label>Basic</ion-label>
+        </ion-chip>
+        <ion-chip outline color="danger">
+          <ion-label>07/03/2021</ion-label>
+        </ion-chip>
+      </ion-label>
+    </ion-item> 
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 </ion-content>
