@@ -29,3 +29,9 @@
 ion-card img{
     width: 100%;
 }
+
+ion-modal.content-payment .modal-wrapper{
+    height: 60%;
+    bottom: 0;
+    position: absolute;
+}

@@ -9,6 +9,7 @@ import { ProductPageRoutingModule } from './product-routing.module';
 import { ListProductPage } from './pages/list-product/list-product.page';
 import { NearbyProductPage } from './pages/nearby-product/nearby-product.page';
 import { RentalProductPage } from './pages/rental-product/rental-product.page';
+import { PaymentProductPage } from './pages/payment-product/payment-product.page';
 
 
 
@@ -19,6 +20,6 @@ import { RentalProductPage } from './pages/rental-product/rental-product.page';
     IonicModule,
     ProductPageRoutingModule
   ],
-  declarations: [ListProductPage,NearbyProductPage,RentalProductPage]
+  declarations: [ListProductPage,NearbyProductPage,RentalProductPage,PaymentProductPage]
 })
 export class ProductPageModule {}

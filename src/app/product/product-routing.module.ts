@@ -18,6 +18,7 @@ const routes: Routes = [
     path: 'rental',
     component: RentalProductPage
   }
+ 
 ];
 
 @NgModule({

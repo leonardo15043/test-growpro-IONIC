@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Alquilar</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list lines="full" class="ion-no-margin">
+    <ion-list-header lines="full">
+      <ion-label>
+        Datos Personales
+      </ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-label >Nombre</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Celular</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Bicicleta</ion-label>
+      <ion-button size="small">Escanear QR</ion-button>
+    </ion-item>
+    <ion-list-header>
+      ¿Cuantos días la necesitas?
+    </ion-list-header>
+    <ion-item>
+      <ion-range min="1" max="100" color="secondary" [(ngModel)]="sliderrange">
+        <ion-label slot="start">1</ion-label>
+        <ion-label slot="end">{{sliderrange}}</ion-label>
+      </ion-range>
+    </ion-item>
+    <section class="full-width">
+      <ion-button expand="full" color="secondary">Pagar</ion-button>
+    </section>
+
+  </ion-list>
+  
+</ion-content>
