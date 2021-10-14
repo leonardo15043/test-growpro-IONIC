@@ -9,18 +9,20 @@
   <ion-list>
     <ion-item>
       <ion-label>Tipo</ion-label>
-      <ion-select  okText="Ok" cancelText="Cancel" placeholder="Seleccionar">
-        <ion-select-option value="Eléctrica">Eléctrica</ion-select-option>
-        <ion-select-option value="Normal">Normal</ion-select-option>
-        <ion-select-option value="Antigua">Antigua</ion-select-option>
+      <ion-select  okText="Ok" cancelText="Cancel" placeholder="Seleccionar" [(ngModel)]="type_product" (ionChange)="selectQuery()">
+        <ion-select-option value="eléctrica">Eléctrica</ion-select-option>
+        <ion-select-option value="normal">Normal</ion-select-option>
+        <ion-select-option value="antigua">Antigua</ion-select-option>
+        <ion-select-option value="todos">Todos</ion-select-option>
       </ion-select>
     </ion-item>
   
     <ion-item>
       <ion-label>Categoría</ion-label>
-      <ion-select  okText="Ok" cancelText="Cancel" placeholder="Seleccionar">
-        <ion-select-option value="Premium">Premium</ion-select-option>
-        <ion-select-option value="Basic">Basic </ion-select-option>
+      <ion-select  okText="Ok" cancelText="Cancel" placeholder="Seleccionar" (ionChange)="selectQuery()" [(ngModel)]="category_product">
+        <ion-select-option value="premium">Premium</ion-select-option>
+        <ion-select-option value="basic">Basic </ion-select-option>
+        <ion-select-option value="todos">Todos</ion-select-option>
       </ion-select>
     </ion-item>
   </ion-list>
@@ -30,58 +32,39 @@
 <ion-content>
 
   <ion-list>
-    <ion-item>
+
+    <ion-item *ngFor="let product of products">
       <ion-thumbnail slot="start">
-        <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgXXKXCGp1SkfDJJZe9OAzuv5zX5XupEhOzg&usqp=CAU"></ion-img>
+        <ion-img [src]="product.image"></ion-img>
       </ion-thumbnail>
       <ion-label>
-        <h2>Bicicleta Todoterreno Bicicleta Mtb</h2>
-        <ion-chip outline color="primary">
+        <h2>{{ product.title }}</h2>
+
+        <ion-chip outline color="primary" *ngIf="product.type_of_bicycle.name == 'eléctrica'">
           <ion-icon name="bicycle-outline"></ion-icon>
-          <ion-label><b>(6)</b></ion-label>
+          <ion-label>Eléctrica</ion-label>
         </ion-chip>
-        <ion-chip color="success">
+        <ion-chip outline color="primary" *ngIf="product.type_of_bicycle.name == 'normal'">
+          <ion-icon name="bicycle-outline"></ion-icon>
+          <ion-label>Normal</ion-label>
+        </ion-chip>
+        <ion-chip outline color="primary" *ngIf="product.type_of_bicycle.name == 'antigua'">
+          <ion-icon name="sad-outline"></ion-icon>
+          <ion-label>Antigua</ion-label>
+        </ion-chip>
+
+        <ion-chip color="success" *ngIf="product.type_of_bicycle.category == 'premium'">
           <ion-label>Premium</ion-label>
+        </ion-chip>
+        <ion-chip *ngIf="product.type_of_bicycle.category == 'basic'">
+          <ion-label>Basic</ion-label>
         </ion-chip>
         <p> (110 km - 4 horas) </p>
         
-        <ion-button color="tertiary">Alquilar</ion-button>
+        <ion-button color="tertiary" (click)="pay()">Alquilar</ion-button>
       </ion-label>
     </ion-item>
-    <ion-item>
-      <ion-thumbnail slot="start">
-        <ion-img src="https://http2.mlstatic.com/D_NQ_NP_719813-MCO45155513790_032021-O.webp"></ion-img>
-      </ion-thumbnail>
-      <ion-label>
-        <h2>Bicicleta Playera Urbana</h2>
-        <ion-chip outline color="primary">
-          <ion-icon name="sad-outline"></ion-icon>
-          <ion-label><b>(8)</b></ion-label>
-        </ion-chip>
-        <ion-chip>
-          <ion-label>Basic</ion-label>
-        </ion-chip>
-        <p> (10 km - 1 horas) </p>
-        <ion-button color="tertiary">Alquilar</ion-button>
-      </ion-label>
-    </ion-item>  
-    <ion-item>
-      <ion-thumbnail slot="start">
-        <ion-img src="https://auteco.vteximg.com.br/arquivos/ids/192511-599-599/BicicletaElectrica_Starker_Tflex_negroAzul_2020_foto--4-.jpg?v=637279074316930000"></ion-img>
-      </ion-thumbnail>
-      <ion-label>
-        <h2> Bicicleta eléctrica tipo plegable</h2>
-        <ion-chip outline color="primary">
-          <ion-icon name="battery-charging-outline"></ion-icon>
-          <ion-label><b>(2)</b></ion-label>
-        </ion-chip>
-        <ion-chip>
-          <ion-label>Basic</ion-label>
-        </ion-chip>
-        <p> (110 km - 4 horas) </p>
-        <ion-button color="tertiary">Alquilar</ion-button>
-      </ion-label>
-    </ion-item>  
+   
   </ion-list>
 
 </ion-content>

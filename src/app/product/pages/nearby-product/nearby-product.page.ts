@@ -8,7 +8,9 @@ import { PaymentProductPage } from "../payment-product/payment-product.page";
 })
 export class NearbyProductPage implements OnInit {
 
-  constructor(public modalController: ModalController) {}
+  constructor(
+    public modalController: ModalController
+    ) {}
 
   ngOnInit() {
   }
