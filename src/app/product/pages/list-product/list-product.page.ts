@@ -24,15 +24,18 @@ export class ListProductPage  {
     });
   }
 
-  async pay() {
+  async pay( product ) {
     const modal = await this.modalController.create({
       component: PaymentProductPage,
+      componentProps: {
+        'product':product
+      },
       cssClass: 'content-payment'
     });
     return await modal.present();
   }
 
-  dismiss() {
+  dismiss(){
     this.modalController.dismiss({
       'dismissed': true
     });

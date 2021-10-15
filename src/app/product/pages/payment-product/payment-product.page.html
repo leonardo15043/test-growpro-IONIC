@@ -24,21 +24,22 @@
       <ion-input></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Bicicleta</ion-label>
-      <ion-button size="small">Escanear QR</ion-button>
+      <ion-label>Bicicleta:</ion-label>
+      {{ product.title }}
+      <ion-button size="small" *ngIf="!product.title">Escanear QR</ion-button>
     </ion-item>
     <ion-list-header>
       ¿Cuantos días la necesitas?
     </ion-list-header>
     <ion-item>
-      <ion-range min="1" max="100" color="secondary" [(ngModel)]="sliderrange">
+      <ion-range min="1" max="100" color="secondary" [(ngModel)]="sliderrange" (ionChange)="sliderRange()">
         <ion-label slot="start">1</ion-label>
         <ion-label slot="end">{{sliderrange}}</ion-label>
       </ion-range>
     </ion-item>
     <ion-item>
       <ion-label>TOTAL</ion-label>
-      <ion-badge color="warning"><b>$</b> 4.0000</ion-badge>
+      <ion-badge color="warning"><b>$</b> {{ total }}</ion-badge>
     </ion-item>
     <section class="full-width">
       <ion-button expand="full" color="secondary">Pagar</ion-button>

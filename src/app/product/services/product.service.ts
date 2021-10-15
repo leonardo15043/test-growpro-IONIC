@@ -34,5 +34,9 @@ export class ProductService {
     }).valueChanges();
   }
 
+  getTypeProduct( idProduct ){
+    return this.ngFirestore.collection(this.collection).doc(idProduct).valueChanges();
+  }
+
 }
   
