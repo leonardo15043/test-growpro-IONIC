@@ -1,26 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { PaymentProductPage } from '../payment-product/payment-product.page';
+import { RentalService } from '../../services/rental.service';
 
 @Component({
   selector: 'app-rental-product',
   templateUrl: './rental-product.page.html',
   styleUrls: ['./rental-product.page.scss'],
 })
-export class RentalProductPage implements OnInit {
+export class RentalProductPage  {
 
-  constructor(public modalController: ModalController) {}
+  rentals = [];
 
-  ngOnInit() {
-  }
+  constructor(
+    public modalController: ModalController,
+    private _rentalService:RentalService
+    ) {
+      this._rentalService.getRentals().subscribe( data =>{
+          console.log(data);
+          this.rentals = data;
+      });
+    }
 
-  async pay() {
-    const modal = await this.modalController.create({
-      component: PaymentProductPage,
-      cssClass: 'content-payment'
-    });
-    return await modal.present();
-  }
 
   dismiss() {
     this.modalController.dismiss({

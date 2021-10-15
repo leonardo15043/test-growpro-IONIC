@@ -13,7 +13,7 @@ import { ProductService } from '../../services/product.service';
 export class NearbyProductPage {
 
   locations:Location;
-
+  
   constructor(
     public modalController: ModalController,
     private _locationService:LocationService,
@@ -25,8 +25,11 @@ export class NearbyProductPage {
     }
   
   async pay() {
+
+  
     const modal = await this.modalController.create({
       component: PaymentProductPage,
+    
       cssClass: 'content-payment'
     });
     return await modal.present();
